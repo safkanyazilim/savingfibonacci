@@ -3,12 +3,11 @@ package com.safkanyazilim.fibonacci;
 public class Main {
 
 	public static void main(String[] args) {
-		FibonacciCalculator fibonacciCalculator = new IterativeFibonacciCalculator();
+		FibonacciCalculator fibonacciCalculator = new FloatingPointFibonacciCalculator();
 		
-		for (int i = 0; i < 100; i++) {
-			System.out.print(fibonacciCalculator.fibonacciNumber(i) + ", ");
-		}
+		double totalTimeSeconds = FibonacciCalculatorTestUtil.totalTimeInSecondsToCalculateAllIntegerFibinacciNumbers(fibonacciCalculator, 10_000_000);
 		
+		System.out.println("Total time in seconds: " + totalTimeSeconds);
 		
 	}
 

@@ -1,6 +1,6 @@
 package com.safkanyazilim.fibonacci;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 
 public class FibonacciCalculatorTestUtil {
@@ -19,6 +19,33 @@ public class FibonacciCalculatorTestUtil {
 			assertEquals("F(" + i + ") = " + fibonacciNumbers[i] + ", not " + fibonacciNumber,
 			            fibonacciNumbers[i], fibonacciNumber);
 		}
+		
+		
 	}
+	
+	public static double totalTimeInSecondsToCalculateAllIntegerFibinacciNumbers(FibonacciCalculator fibonacciCalculator, int repetitions) {
+		
+		long start = System.currentTimeMillis();
+		
+		int executions = 0;
+		int sum = 0;
+		
+		for (int k = 0; k < repetitions; k++) {
+			for (int i = 0; i < fibonacciNumbers.length; i++) {
+				sum +=  fibonacciCalculator.fibonacciNumber(i);
+				executions++;
+			}
+		}
+		
+		long end = System.currentTimeMillis();
+		
+		System.out.println("executions:" + executions);
+		System.out.println("sum: " + sum);
+		
+		return (end - start)/1000.0;
+		
+	}
+	
+
 	
 }
