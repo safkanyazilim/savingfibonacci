@@ -1,8 +1,6 @@
 package com.safkanyazilim.fibonacci;
 
 public class RecursiveFibonacciCalculator implements FibonacciCalculator {
-
-	
 	
 	@Override
 	public int fibonacciNumber(int n) {
